@@ -7,7 +7,7 @@
 ## how-to
 
 1. [pick domain name(s)](https://www.namecheap.com/domains/registration/results/?type=&domain=test)
-2. press «Generate», then «Export»
+2. switch to «Beast Mode», press «Generate», then «Export»
 
 ![how-to](how-to.png)
 
