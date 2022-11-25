@@ -1,0 +1,19 @@
+title  "tld"
+description  "sort .TLD's by length and price"
+type  "code"
+tags  "tld"  "js"  "sort"  "table"  "ui"
+license  "MIT"
+homepage  "https://dym.sh/tld"
+
+
+mirrors {
+  github  "https://github.com/dym-sh/tld"
+  codepen  "https://codepen.io/dym-sh/pen/poaKXox"
+}
+
+
+log {
+  2022-05-25  "original sketch"
+  2022-06-04  "created as a codepen"
+  2022-11-25  "addded to github"
+}

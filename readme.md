@@ -1,6 +1,8 @@
 # tld
 
-> sort .gTLD's by length and price
+> sort .TLD's by length and price
+
+(copy-paste @Namecheap's domain-search .CSV-export contents here)
 
 ## how-to
 
@@ -11,7 +13,7 @@
 
 
 3. wait until [`results.csv`](results.csv) is downloaded
-4. copy-paste its contents into the first text-area
+4. copy-paste its contents into the first text-area on the [gh-page](https://dym-sh.github.io/tld/)
 
 ![screenshot](screenshot.png)
 
