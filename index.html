@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
-<head>
 <meta charset="utf8" />
 <title>{short,cheap}.gTLD's</title>
 <style>
 label
 { cursor: pointer }
 
-th , td
+th, td
 { border : 1px solid black
 ; padding : 0.5rem 1rem
 }
@@ -30,8 +28,7 @@ th , td
 .tld_full.non_available
 { color : darkmagenta }
 </style>
-</head>
-<body>
+
 
 <textarea rows="5" cols="50" id="txt_csv"
   placeholder="[copy-paste @Namecheap's domain-search .CSV-export contents here]"
@@ -563,32 +560,22 @@ th , td
   ></textarea>
 
 <table>
-  <thead>
-  <th>
-    <label>
+  <td><label>
       <input id="chk_show_taken" type="checkbox" />
       show taken
-    </label>
-  </th>
-  <th>
-    <label>
+      </label>
+  <td><label>
       <input id="chk_show_sub" type="checkbox" />
       show 3rd level
-    </label>
-  </th>
-  <th>
-    <label>
+      </label>
+  <td><label>
       <input id="chk_show_unicode" type="checkbox" />
       show unicode
-    </label>
-  </th>
-  <th>
-    <label>
+      </label>
+  <td><label>
       <input id="chk_show_handshake" type="checkbox" />
       show handshake
-    </label>
-  </th>
-  </thead>
+      </label>
 </table>
 
 <table>
@@ -609,9 +596,13 @@ th , td
   </tbody>
 </table>
 
-</body>
+<h4>
+<a target="_blank"
+  href="https://github.com/dym-sh/tld"
+  >source-code and instructions</a>
+</h4>
 
-<script>
+<script defer>
 Array.prototype.uniq =
 Array.prototype.unique =
   ( ( ) => function( )
@@ -767,4 +758,3 @@ txt_csv.onchange
   = fn_parse_csv
 
 </script>
-</html>
