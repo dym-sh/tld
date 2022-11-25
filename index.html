@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf8" />
+<title>{short,cheap}.gTLD's</title>
+<style>
+label
+{ cursor: pointer }
+
+th , td
+{ border : 1px solid black
+; padding : 0.5rem 1rem
+}
+
+.tld_price
+{ color : crimson }
+
+.tld_full.highlight
+{ background-color : yellowgreen }
+
+.tld_full.lvl3
+{ background-color : lightgray }
+
+.tld_full.unicode
+{ background-color : aquamarine }
+
+.tld_full.handshake
+{ background-color : coral }
+
+.tld_full.non_available
+{ color : darkmagenta }
+</style>
+</head>
+<body>
+
+<textarea rows="5" cols="50" id="txt_csv"
+  placeholder="[copy-paste @Namecheap's domain-search .CSV-export contents here]"
+  title="[copy-paste @Namecheap's domain-search .CSV-export contents here]"
+  >"Domain","Available","Premium","Price"
+"tld.academy","available","premium","€41.55"
+"tld.accountants","available","","€16.93"
+"tld.actor","available","","€11.60"
+"tld.adult","available","","€37.75"
+"tld.ae.org","available","","€19.35"
+"tld.africa","available","","€5.79"
+"tld.agency","available","premium","€25.18"
+"tld.airforce","available","","€27.10"
+"tld.apartments","available","","€47.44"
+"tld.army","available","premium","€251.82"
+"tld.art","available","premium","€572.88"
+"tld.associates","available","premium","€41.55"
+"tld.attorney","available","premium","€124.65"
+"tld.audio","available","premium","€377.72"
+"tld.auto","available","","€1,983.54"
+"tld.autos","available","","€1.74"
+"tld.baby","available","","€4.84"
+"tld.band","available","","€11.60"
+"tld.beauty","available","","€1.74"
+"tld.beer","available","","€12.57"
+"tld.berlin","available","","€76.49"
+"tld.bike","available","","€8.70"
+"tld.bingo","available","","€42.60"
+"tld.blackfriday","available","premium","€377.72"
+"tld.blog","available","premium","€629.54"
+"tld.boats","available","","€1.74"
+"tld.bond","available","premium","€644.65"
+"tld.boo","available","premium","€74.29"
+"tld.boston","available","premium","€100.73"
+"tld.boutique","available","premium","€41.55"
+"tld.br.com","available","","€41.63"
+"tld.build","available","premium","€188.86"
+"tld.builders","available","","€29.04"
+"tld.buzz","available","premium","€125.91"
+"tld.cab","available","premium","€41.55"
+"tld.cafe","available","premium","€41.55"
+"tld.cam","available","premium","€503.63"
+"tld.camera","available","","€49.38"
+"tld.car","available","","€1,983.54"
+"tld.cards","available","premium","€41.55"
+"tld.care","available","premium","€41.55"
+"tld.careers","available","","€22.74"
+"tld.cars","available","","€1,983.54"
+"tld.cash","available","premium","€41.55"
+"tld.casino","available","","€11.60"
+"tld.catering","available","premium","€41.55"
+"tld.cc","available","premium","€1,957.38"
+"tld.cfd","available","premium","€564.07"
+"tld.christmas","available","premium","€125.91"
+"tld.church","available","","€30.97"
+"tld.city","available","premium","€25.18"
+"tld.claims","available","","€11.60"
+"tld.cleaning","available","","€47.44"
+"tld.clothing","available","","€29.04"
+"tld.club","available","premium","€5,723.97"
+"tld.cm","available","premium","€9,646.49"
+"tld.cn.com","available","","€18.38"
+"tld.co.bz","available","","€44.53"
+"tld.coffee","available","premium","€41.55"
+"tld.college","available","","€4.84"
+"tld.com.de","available","","€4.82"
+"tld.com.es","available","","€9.67"
+"tld.com.mx","available","","€21.29"
+"tld.com.pe","available","","€57.12"
+"tld.com.ph","available","","€38.72"
+"tld.com.sg","available","","€43.56"
+"tld.com.vc","available","","€31.94"
+"tld.company","available","premium","€41.55"
+"tld.computer","available","premium","€41.55"
+"tld.condos","available","","€42.60"
+"tld.construction","available","","€29.04"
+"tld.contractors","available","premium","€41.55"
+"tld.cooking","available","","€12.57"
+"tld.coupons","available","","€8.70"
+"tld.courses","available","premium","€629.54"
+"tld.credit","available","","€6.76"
+"tld.creditcard","available","","€128.79"
+"tld.cruises","available","","€42.60"
+"tld.cymru","available","","€12.57"
+"tld.cyou","available","premium","€75.54"
+"tld.dating","available","","€16.93"
+"tld.day","available","premium","€74.29"
+"tld.degree","available","","€38.72"
+"tld.delivery","available","","€6.76"
+"tld.democrat","available","","€27.10"
+"tld.dental","available","","€49.38"
+"tld.dentist","available","","€49.38"
+"tld.desi","available","","€18.38"
+"tld.dev","available","premium","€817.14"
+"tld.diamonds","available","","€47.44"
+"tld.diet","available","premium","€377.72"
+"tld.digital","available","premium","€41.55"
+"tld.direct","available","premium","€41.55"
+"tld.discount","available","premium","€41.55"
+"tld.dog","available","premium","€83.10"
+"tld.earth","available","","€19.35"
+"tld.education","available","premium","€41.55"
+"tld.email","available","premium","€41.55"
+"tld.energy","available","","€8.70"
+"tld.engineer","available","","€29.04"
+"tld.engineering","available","","€8.70"
+"tld.enterprises","available","premium","€41.55"
+"tld.equipment","available","","€20.32"
+"tld.estate","available","","€5.79"
+"tld.eu.com","available","","€17.41"
+"tld.events","available","premium","€41.55"
+"tld.exchange","available","premium","€83.10"
+"tld.expert","available","","€5.79"
+"tld.exposed","available","premium","€25.18"
+"tld.express","available","premium","€41.55"
+"tld.fans","available","premium","€377.72"
+"tld.fashion","available","","€12.57"
+"tld.film","available","premium","€251.82"
+"tld.financial","available","","€11.60"
+"tld.fish","available","","€30.97"
+"tld.fishing","available","","€12.57"
+"tld.fit","available","premium","€50.36"
+"tld.fitness","available","premium","€41.55"
+"tld.flights","available","","€22.74"
+"tld.florist","available","","€27.10"
+"tld.flowers","available","premium","€377.72"
+"tld.fm","available","premium","€623.24"
+"tld.football","available","premium","€41.55"
+"tld.forsale","available","premium","€124.65"
+"tld.forum","available","","€96.83"
+"tld.foundation","available","premium","€41.55"
+"tld.fund","available","","€11.60"
+"tld.furniture","available","","€47.44"
+"tld.futbol","available","","€10.63"
+"tld.gallery","available","premium","€41.55"
+"tld.game","available","premium","€1,479.80"
+"tld.games","available","premium","€124.65"
+"tld.gay","available","","€2.89"
+"tld.gb.net","available","","€9.67"
+"tld.gg","available","premium","€9,189.35"
+"tld.gift","available","","€16.45"
+"tld.gifts","available","premium","€41.55"
+"tld.gives","available","","€1.92"
+"tld.glass","available","","€47.44"
+"tld.global","available","premium","€3,021.79"
+"tld.gold","available","","€5.79"
+"tld.gr.com","available","","€14.51"
+"tld.graphics","available","premium","€41.55"
+"tld.gratis","available","premium","€41.55"
+"tld.gripe","available","","€27.10"
+"tld.guide","available","premium","€48,915.25"
+"tld.guitars","available","premium","€377.72"
+"tld.hair","available","","€1.74"
+"tld.hamburg","available","","€77.46"
+"tld.haus","available","","€11.60"
+"tld.health","available","premium","€629.54"
+"tld.healthcare","available","","€47.44"
+"tld.hiphop","available","premium","€12,590.80"
+"tld.hockey","available","","€42.60"
+"tld.holiday","available","","€47.44"
+"tld.homes","available","","€1.74"
+"tld.horse","available","","€12.57"
+"tld.hosting","available","","€328.31"
+"tld.how","available","premium","€118.35"
+"tld.hu.net","available","","€31.94"
+"tld.immo","available","","€27.10"
+"tld.immobilien","available","","€27.10"
+"tld.in","available","","€3.85"
+"tld.inc","available","","€1,063.44"
+"tld.industries","available","premium","€41.55"
+"tld.institute","available","premium","€41.55"
+"tld.insure","available","","€47.44"
+"tld.international","available","premium","€25.18"
+"tld.investments","available","premium","€124.65"
+"tld.io","available","premium","€23,486.68"
+"tld.irish","available","","€5.79"
+"tld.jetzt","available","","€18.38"
+"tld.jewelry","available","","€47.44"
+"tld.jp.net","available","","€8.70"
+"tld.jpn.com","available","","€37.75"
+"tld.juegos","available","","€357.37"
+"tld.kitchen","available","","€11.60"
+"tld.kiwi","available","","€31.94"
+"tld.kyoto","available","","€68.75"
+"tld.la","available","premium","€2,710.90"
+"tld.land","available","premium","€41.55"
+"tld.lat","available","","€25.16"
+"tld.law","available","premium","€1,158.35"
+"tld.lawyer","available","premium","€124.65"
+"tld.legal","available","","€49.38"
+"tld.life","available","premium","€41.55"
+"tld.lighting","available","","€19.35"
+"tld.limo","available","","€43.56"
+"tld.live","available","premium","€251.82"
+"tld.loans","available","","€11.60"
+"tld.love","available","","€4.82"
+"tld.maison","available","","€42.60"
+"tld.makeup","available","","€1.74"
+"tld.management","available","premium","€25.18"
+"tld.marketing","available","premium","€83.10"
+"tld.mba","available","","€11.60"
+"tld.me.uk","available","","€6.76"
+"tld.media","available","premium","€41.55"
+"tld.melbourne","available","premium","€170.11"
+"tld.memorial","available","","€42.60"
+"tld.menu","available","","€30.97"
+"tld.mex.com","available","","€12.57"
+"tld.miami","available","premium","€100.73"
+"tld.moda","available","","€27.10"
+"tld.mom","available","premium","€114.29"
+"tld.money","available","","€8.70"
+"tld.monster","available","premium","€19,369.49"
+"tld.mortgage","available","premium","€124.65"
+"tld.motorcycles","available","","€1.74"
+"tld.movie","available","","€28.07"
+"tld.mx","available","","€9.67"
+"tld.name","available","premium","€648.91"
+"tld.navy","available","","€27.10"
+"tld.net.pe","available","","€57.12"
+"tld.net.ph","available","","€38.72"
+"tld.net.vc","available","","€31.94"
+"tld.new","available","","€473.59"
+"tld.news","available","premium","€1,259.08"
+"tld.nom.es","available","","€19.35"
+"tld.nu","available","","€30.00"
+"tld.nyc","available","premium","€8,523.00"
+"tld.okinawa","available","","€11.60"
+"tld.online","available","premium",""
+"tld.org","available","premium","€47,348.18"
+"tld.org.au","available","","€16.45"
+"tld.org.es","available","","€19.35"
+"tld.org.mx","available","","€21.29"
+"tld.org.pe","available","","€57.12"
+"tld.org.ph","available","","€38.72"
+"tld.org.vc","available","","€31.94"
+"tld.osaka","available","","€31.94"
+"tld.page","available","premium","€74.29"
+"tld.paris","available","","€61.00"
+"tld.parts","available","premium","€41.55"
+"tld.pe","available","","€57.12"
+"tld.photo","available","","€9.67"
+"tld.photography","available","","€8.70"
+"tld.photos","available","premium","€25.18"
+"tld.pics","available","premium","€114.29"
+"tld.pictures","available","premium","€16.37"
+"tld.pink","available","","€8.70"
+"tld.pizza","available","","€8.70"
+"tld.plumbing","available","","€42.60"
+"tld.porn","available","","€37.75"
+"tld.press","available","","€4.82"
+"tld.prodazha","available","","€38.74"
+"tld.productions","available","premium","€41.55"
+"tld.protection","available","","€1,983.54"
+"tld.quest","available","","€1.73"
+"tld.realty","available","","€56.15"
+"tld.rehab","available","","€27.10"
+"tld.reise","available","premium","€124.65"
+"tld.reisen","available","premium","€25.18"
+"tld.repair","available","premium","€41.55"
+"tld.report","available","premium","€25.18"
+"tld.republican","available","","€27.10"
+"tld.restaurant","available","","€11.60"
+"tld.rocks","available","premium","€523.00"
+"tld.rodeo","available","","€3.85"
+"tld.rsvp","available","premium","€74.29"
+"tld.ryukyu","available","","€11.60"
+"tld.sa.com","available","premium","€97,719.13"
+"tld.sarl","available","premium","€41.55"
+"tld.sbs","available","premium","€483.49"
+"tld.school","available","premium","€41.55"
+"tld.schule","available","premium","€25.18"
+"tld.se.net","available","","€31.94"
+"tld.security","available","","€1,983.54"
+"tld.sex","available","","€37.75"
+"tld.sexy","available","premium","€31,477.00"
+"tld.shoes","available","","€22.74"
+"tld.shop","available","premium","€2,518.16"
+"tld.shopping","available","","€29.04"
+"tld.singles","available","","€5.79"
+"tld.site","available","premium","€629.54"
+"tld.skin","available","","€1.74"
+"tld.soccer","available","","€18.38"
+"tld.social","available","","€6.76"
+"tld.software","available","premium","€503.63"
+"tld.solar","available","","€49.38"
+"tld.solutions","available","premium","€1,031.48"
+"tld.soy","available","","€25.16"
+"tld.storage","available","","€522.01"
+"tld.store","available","premium","€157.38"
+"tld.study","available","premium","€629.54"
+"tld.style","available","premium","€41.55"
+"tld.sucks","available","premium","€2,642.81"
+"tld.supplies","available","","€18.38"
+"tld.support","available","premium","€41.55"
+"tld.surf","available","premium","€100.73"
+"tld.surgery","available","","€42.60"
+"tld.systems","available","premium","€41.55"
+"tld.tattoo","available","","€2.89"
+"tld.tax","available","","€8.70"
+"tld.taxi","available","","€8.70"
+"tld.team","available","premium","€41.55"
+"tld.tennis","available","","€42.60"
+"tld.theater","available","","€42.60"
+"tld.theatre","available","","€522.01"
+"tld.tickets","available","","€381.58"
+"tld.tienda","available","","€42.60"
+"tld.tips","available","premium","€41.55"
+"tld.tires","available","","€76.49"
+"tld.tools","available","premium","€41.55"
+"tld.top","available","premium","€343.44"
+"tld.tours","available","","€5.79"
+"tld.town","available","premium","€41.55"
+"tld.toys","available","","€11.60"
+"tld.training","available","","€11.60"
+"tld.travel","available","","€22.74"
+"tld.tube","available","","€12.57"
+"tld.uk.net","available","","€30.97"
+"tld.university","available","","€47.44"
+"tld.us","available","","€3.85"
+"tld.us.org","available","","€19.35"
+"tld.vacations","available","","€29.04"
+"tld.vegas","available","","€19.35"
+"tld.ventures","available","","€8.70"
+"tld.vet","available","premium","€124.65"
+"tld.viajes","available","","€42.60"
+"tld.video","available","premium","€124.65"
+"tld.villas","available","","€42.60"
+"tld.vin","available","","€5.79"
+"tld.vision","available","premium","€41.55"
+"tld.vodka","available","","€12.57"
+"tld.voice","available","","€38.74"
+"tld.vote","available","","€22.74"
+"tld.voting","available","","€1,190.30"
+"tld.voto","available","","€22.74"
+"tld.voyage","available","","€42.60"
+"tld.wales","available","","€12.57"
+"tld.wedding","available","","€12.57"
+"tld.win","available","premium","€1,254.24"
+"tld.work","available","premium","€100.73"
+"tld.works","available","premium","€41.55"
+"tld.wtf","available","premium","€523.00"
+"tld.yachts","available","","€1.74"
+"tld.yoga","available","premium","€251.82"
+"tld.yokohama","available","","€11.60"
+</textarea>
+<textarea rows="5" cols="20" id="txt_to_highlight"
+  placeholder="[to hightlight (space-separated list)]"
+  title="[to hightlight (space-separated list)]"
+  >
+dev codes design garden observer sh
+</textarea>
+<textarea rows="5" cols="20" id="txt_to_hide"
+  placeholder="[to hide (space-separated list)]"
+  title="[to hide (space-separated list)]"
+  >
+bid biz cfd cymru cyou desi futbol gdn gmbh gratis gripe
+hiphop hockey icu immo insure irish jetzt juegos kaufen kim
+kyoto lgbt mba moda nagoya navy nyc onl osaka pw reise reisen
+ryukyu sarl schule sexy sydney taxi tienda tires uno hosting
+vegas viajes villas vin voyage wales ws yachts vodka voto ltda
+condos london wine xxx tax vote kiwi realty poker boston krd
+paris voting tattoo sucks clinic quest okinawa immobilien christmas
+diamonds cruises financial maison apartments creditcard cleaning
+dental accountants restaurant vacations blackfriday accountant college
+motorcycles associates singles jewelry credit plumbing bargains
+coupons wedding boutique shiksha soccer furniture hamburg miami mobi
+sbs vip haus lease casa moe tokyo loan info international casino
+enterprises healthcare melbourne exposed university memorial marketing
+berlin degree mortgage republican democrat football yokohama shopping
+rentals recipes
+</textarea>
+
+<table>
+  <thead>
+  <th>
+    <label>
+      <input id="chk_show_taken" type="checkbox" />
+      show taken
+    </label>
+  </th>
+  <th>
+    <label>
+      <input id="chk_show_sub" type="checkbox" />
+      show 3rd level
+    </label>
+  </th>
+  <th>
+    <label>
+      <input id="chk_show_unicode" type="checkbox" />
+      show unicode
+    </label>
+  </th>
+  <th>
+    <label>
+      <input id="chk_show_handshake" type="checkbox" />
+      show handshake
+    </label>
+  </th>
+  </thead>
+</table>
+
+<table>
+  <thead>
+  <th>price\letters</th>
+  <th>2</th>
+  <th>3</th>
+  <th>4</th>
+  <th>5</th>
+  <th>6+</th>
+  </thead>
+  <tbody id="table_rows" valign="top">
+
+    <template id="tpl_row">
+      <tr> <td><td><td><td><td><td>
+    </template>
+
+  </tbody>
+</table>
+
+</body>
+
+<script>
+Array.prototype.uniq =
+Array.prototype.unique =
+  ( ( ) => function( )
+    { return [ ...new Set( this ) ] }
+  ) ( )
+
+
+const price_brackets = [ 10, 20, 50, 100, 250, 500, 1000, 5000, 10_000, 100_000 ]
+    , handshake =
+        [ '0db', '1', '247', '3dom', '4sale', '80proof', '8888', 'ags', 'albums', 'aotearoa'
+        , 'apartment', 'api', 'articles', 'ath', 'augmented', 'bakes', 'base', 'beach', 'beef'
+        , 'blockchaindapps', 'boredapes', 'brand', 'brokers', 'btk9', 'c', 'c0m', 'cabins'
+        , 'cardcollector', 'cerrajero', 'citizenship', 'coffees', 'comic', 'comics', 'commerce'
+        , 'consultancy', 'crazy', 'creations', 'creator', 'cryptocum', 'dan', 'de3', 'defi'
+        , 'degen', 'den', 'diva', 'doge', 'dookie', 'dweb', 'economics', 'economy', 'edm', 'egame'
+        , 'elite', 'eporn', 'ero', 'estates', 'ewallet', 'exercise', 'ext', 'ez', 'fam', 'fe'
+        , 'foot', 'funnelclub', 'gengar', 'ger', 'gin', 'godefi', 'greatoffers', 'guey', 'hack'
+        , 'hermanos', 'hill', 'hire', 'hodlr', 'holding', 'holidays', 'hotelguide', 'ibn'
+        , 'ill', 'influencer', 'innovator', 'iny', 'island', 'ism', 'isthefuture', 'iurl'
+        , 'ize', 'job', 'joker', 'jpgs', 'js', 'knowledge', 'lean', 'livestreaming', 'lnx'
+        , 'logo', 'lovesyou', 'magazine', 'mansion', 'ment', 'mined', 'mke', 'mooning', 'motherboard'
+        , 'mtl', 'mycard', 'myco', 'myurl', 'nearme', 'nftcartel', 'nil', 'nom', 'often', 'oh'
+        , 'oin', 'oncam', 'onewallet', 'onlinenews', 'oo', 'oot', 'orb', 'owbo', 'p', 'pal', 'pgp'
+        , 'picture', 'pix', 'pixelpenguins', 'premium', 'prodazha', 'project', 'pspk', 'rekt'
+        , 'rogan', 'row', 'saas', 'sats', 'secrets', 'sexjournal', 'shot', 'sox', 'squirtfiesta'
+        , 'src', 'ssl', 'startup', 'streamer', 'swapz', 'taughtme', 'teck', 'teepee', 'tefi', 'ter'
+        , 'thenerd', 'tni', 'token', 'tokensale', 'trader', 'troll', 'tuber', 'tx', 'txt', 'ud'
+        , 'uge', 'uk3', 'ultimate', 'uorg', 'us3', 'use', 'valley', 'viewnow', 'visit', 'vlog'
+        , 'voice', 'vrmmo', 'vvip', 'w33d', 'w3b', 'wave', 'web4', 'webdesigner', 'x2', 'xn--5o8h'
+        , 'xn--6ca', 'xn--dei', 'xn--dp8h', 'xn--e77hhb', 'xn--g6h', 'xn--go-nz82a', 'xn--pei'
+        , 'xn--rci', 'xr', 'xxxx', 'year', 'yo', 'yol', 'yolo', 'yummy', 'yzx', 'zen', 'zug'
+        ]
+        // https://www.namecheap.com/support/knowledgebase/article.aspx/10484/2278/namecheap-handshake-tlds/
+
+
+const tpl_row = document.querySelector( `#tpl_row` )
+
+const fn_parse_csv = ( e ) =>
+{
+  const rows = txt_csv.value.split( /[\r\n]+/ )
+      , to_highlight = txt_to_highlight.value.replace(/[^\s\w\.]/g,``).split( /[\r\n\s]+/ )
+      , to_hide = txt_to_hide.value.replace(/[^\s\w\.]/g,``).split( /[\r\n\s]+/ )
+
+  let domains = {}
+  price_brackets.forEach( p => domains[p] = [] )
+
+  for( row of rows )
+    {
+      if( /^"Domain"/.test( row ) )
+        { continue }
+
+      // "code.observer","available","","€9.58"
+      // "work.ac","taken","",""
+      const arr_row =
+        row.split(`","`)
+          .map( s => s.replace(/[^\w\.-]/g,``) )
+
+      const domain =
+        { full   : arr_row[0]
+        , tld    : arr_row[0].replace(/^[\w-]+\./,``)
+        , status : arr_row[1]
+        , note   : arr_row[2]
+        , price  : parseFloat( arr_row[3] ) || 0
+        }
+
+      for( p of price_brackets )
+        {
+          if( domain.price <= p )
+            {
+              domains[p].push( domain )
+              break
+            }
+        }
+    }
+
+console.log(domains)
+
+table_rows.innerHTML = ``
+
+for( const k of Object.keys(domains) )
+  {
+    let new_row = tpl_row.content.cloneNode( true )
+      , new_row_cells = new_row.querySelectorAll( 'td' )
+
+    new_row_cells[0].innerHTML = k
+
+    for( let i = 1
+       ; i < new_row_cells.length
+       ; i++
+       )
+      {
+        new_row_cells[i].innerHTML =
+          domains[k]
+            .filter( d => !to_hide.includes(d.tld) )
+            .filter( d => ( i === 1
+                          ? d.tld.length <= 2
+                          : ( new_row_cells.length === i+1
+                            ? d.tld.length > i
+                            : d.tld.length === i+1
+                            )
+                          )
+                   )
+            .filter( d => chk_show_taken.checked
+                       || ( 'available' === d.status )
+                   )
+            .filter( d => chk_show_sub.checked
+                       || ( -1 === d.tld.indexOf(`.`) )
+                   )
+            .filter( d => chk_show_unicode.checked
+                       || ( -1 === d.tld.indexOf(`xn--`) )
+                   )
+            .filter( d => chk_show_handshake.checked
+                       || ( !handshake.includes(d.tld) )
+                   )
+            // .sort( (a,b) => a.price > b.price )
+            .sort( (a,b) => a.tld.localeCompare( b.tld ) )
+            .map( d => `
+<span class="tld_full
+  ${ to_highlight.includes(d.tld) ? 'highlight' : '' }
+  ${ handshake.includes(d.tld)    ? 'handshake' : '' }
+  ${ -1 !== d.tld.indexOf(`.`)    ? 'lvl3' : '' }
+  ${ -1 !== d.tld.indexOf(`xn--`) ? 'unicode' : '' }
+  ${ 'available' === d.status     ? '' : 'non_available' }
+  "
+  >${ d.full }</span>
+  ${ d.price
+  ? `<span class="tld_price">${ d.price.toFixed(2) }</span>`
+  : '' }
+`)
+            .unique()
+            .join(`<br>\n`)
+      }
+
+    table_rows.appendChild( new_row )
+
+  }
+
+}
+
+fn_parse_csv()
+
+
+txt_csv.onchange
+  = txt_csv.onkeyup
+  = txt_to_highlight.onchange
+  = txt_to_highlight.onkeyup
+  = txt_to_hide.onchange
+  = txt_to_hide.onkeyup
+  = chk_show_taken.onchange
+  = chk_show_sub.onchange
+  = chk_show_unicode.onchange
+  = chk_show_handshake.onchange
+  = fn_parse_csv
+
+</script>
+</html>
